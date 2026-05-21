@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản - Wolfclub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/menu.css">
+<header style="background-color: #000; padding: 15px 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h1 style="margin: 0; text-align: left;">
+                <a href="index.html" style="color: white; text-decoration: none; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-transform: uppercase;">QUANGTHANHDAT</a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="acc-wrapper container">
+        
+        <aside class="acc-sidebar">
+            
+            <div class="acc-profile">
+                <div class="acc-avatar"><i class="fas fa-user"></i></div>
+                <div class="acc-user-info">
+                    <span class="acc-name">-</span>
+                    <span class="acc-email" id="display-email">đang tải...</span> 
+                </div>
+            </div>
+
+            <nav class="acc-nav">
+                <a href="#"><i class="far fa-user-circle"></i> Thông tin tài khoản <i class="fas fa-chevron-right arrow"></i></a>
+                <a href="#" class="active"><i class="fas fa-list-ul"></i> Lịch sử đơn hàng <i class="fas fa-chevron-right arrow"></i></a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Địa chỉ đã lưu <i class="fas fa-chevron-right arrow"></i></a>
+                <a href="#"><i class="far fa-star"></i> Đánh giá đơn hàng <i class="fas fa-chevron-right arrow"></i></a>
+            </nav>
+
+            <div class="acc-contact">
+                <p><span class="label"><i class="far fa-envelope"></i> Email liên hệ</span> <a href="mailto:Wolfclub@gmail.com" class="val">Wolfclub@gmail.com</a></p>
+                <p><span class="label"><i class="fas fa-globe"></i> Website</span> <a href="index.html" class="val">Quay lại Trang chủ</a></p>
+            </div>
+
+            <button class="btn-logout" id="btn-logout">Đăng xuất</button>
+        </aside>
+
+        <main class="acc-content">
+            <h2 class="acc-page-title">Lịch sử đơn hàng</h2>
+            
+            <div class="acc-search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Tìm theo mã đơn hàng hoặc tên sản phẩm">
+            </div>
+
+            <div class="acc-tabs">
+                <div class="tab active">Chờ xác nhận</div>
+                <div class="tab">Chờ lấy hàng</div>
+                <div class="tab">Đang giao hàng</div>
+                <div class="tab">Đã giao</div>
+                <div class="tab">Trả hàng</div>
+                <div class="tab">Đã huỷ</div>
+            </div>
+
+            <div class="acc-empty-state">
+                <div class="empty-icon"><i class="fas fa-box-open"></i></div>
+                <p>Bạn chưa có đơn hàng nào</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userEmail = localStorage.getItem('logged_in_email');
+            
+            if (userEmail) {
+                // Nếu id="display-email" tồn tại thì in email ra (áp dụng cho giao diện tài khoản)
+                let emailDisplay = document.getElementById('display-email');
+                if(emailDisplay) emailDisplay.innerText = userEmail;
+            } else {
+                window.location.href = 'login.html'; 
+            }
+
+            // Xử lý nút Đăng xuất nhảy về trang ban đầu (Trang chủ)
+            document.getElementById('btn-logout').addEventListener('click', function() {
+                localStorage.removeItem('logged_in_email'); 
+                
+                // ĐỔI DÒNG NÀY THÀNH INDEX.HTML
+                window.location.href = 'index.html'; 
+            });
+        });
+    </script>
+</body>
+</html>

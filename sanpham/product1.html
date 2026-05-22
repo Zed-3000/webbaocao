@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wolfclub Product</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+
+
+.site-header{
+    width:100%;
+    height:80px;
+    background:white;
+    border-bottom:1px solid #ddd;
+	position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner{
+    width:90%;
+    height:80px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.site-logo a{
+    text-decoration:none;
+    color:black;
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.header-icons{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.header-icons a{
+    color:black;
+    text-decoration:none;
+    position:relative;
+}
+
+.cart-count{
+    position:absolute;
+    top:-8px;
+    right:-10px;
+    background:red;
+    color:white;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    font-size:11px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+
+.product-main{
+    width:100%;
+    padding:50px 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:50px;
+}
+
+.product-col-left{
+    width:25%;
+	position: sticky;
+    top: 130px;
+}
+
+.prod-title{
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:25px;
+    text-transform:uppercase;
+}
+
+.prod-desc{
+    font-size:16px;
+    line-height:28px;
+    margin-bottom:25px;
+}
+
+.prod-details{
+    padding-left:20px;
+    line-height:38px;
+    margin-bottom:35px;
+}
+
+.prod-meta{
+    font-size:16px;
+    line-height:32px;
+}
+
+
+.product-col-center{
+    width:45%;
+    text-align:center;
+}
+
+.product-col-center img{
+    width:100%;
+    max-width:700px;
+}
+
+.product-col-right{
+    width:22%;
+	position: sticky;
+    top: 130px;
+}
+
+.prod-price{
+    font-size:24px;
+    margin-bottom:40px;
+}
+
+.size-guide{
+    display:block;
+    margin-bottom:15px;
+    color:black;
+    font-size:14px;
+    text-decoration:underline;
+}
+
+.size-selector{
+    width:100%;
+    height:50px;
+    padding:10px;
+    border:1px solid #ccc;
+    font-size:15px;
+    margin-bottom:25px;
+}
+
+.btn-add-cart{
+    width:100%;
+    height:55px;
+    border:none;
+    background:black;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-add-cart:hover{
+    background:#222;
+}
+
+
+@media(max-width:900px){
+
+.product-main{
+    flex-direction:column;
+    padding:30px;
+}
+
+.product-col-left,
+.product-col-center,
+.product-col-right{
+    width:100%;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <div class="site-logo">
+            <a href="../index.html">WOLFCLUB</a>
+        </div>
+
+        <div class="header-icons">
+
+            <a href="#">
+                <i class="fas fa-search"></i>
+            </a>
+
+            <a href="#">
+                <i class="far fa-user"></i>
+            </a>
+
+            <a href="#">
+                <i class="far fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<main class="product-main">
+    <div class="product-col-left">
+        <h1 class="prod-title" id="sp-ten">
+            
+        </h1>
+        <p class="prod-desc">    
+        </p>
+        <ul class="prod-details">
+            <li>Cổ tròn</li>
+            <li>Vai rủ</li>
+            <li>Logo và hình in ở mặt trước và mặt sau</li>
+        </ul>
+        <p class="prod-meta">
+            Màu sắc:  Xanh trắng<br>
+            Chất liệu: 100% cotton.
+        </p>
+    </div>
+    <div class="product-col-center">
+        <img id="sp-anh-truoc" src="" alt="mặt trước">
+		<img id="sp-anh-sau" src="" alt="mặt sau">
+    </div>
+    <div class="product-col-right">
+        <p class="prod-price" id="sp-gia">
+            0₫
+        </p>
+        <a href="#" class="size-guide">
+            SIZE GUIDE
+        </a>
+        <select class="size-selector">
+            <option>Chọn kích thước</option>
+            <option>Size S</option>
+            <option>Size M</option>
+            <option>Size L</option>
+            <option>Size XL</option>
+        </select>
+        <button class="btn-add-cart">
+            THÊM VÀO GIỎ HÀNG
+        </button>
+    </div>
+</main>
+<script src="../js/sanpham.js"></script>
+</body>
+</html>

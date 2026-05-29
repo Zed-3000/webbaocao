@@ -644,4 +644,176 @@ body.login-page-bg {
 		grid-template-columns: repeat(1, 1fr);	
 	}
 }
-	
+
+/* ==================================================
+   GIAO DIỆN TRANG THANH TOÁN / GIỎ HÀNG (THANHTOAN.HTML)
+================================================== */
+body.thanhtoan-body { 
+    background-color: #f8f9fa; /* Chỉ đổi nền xám cho riêng trang thanh toán */
+}
+
+.cart-wrapper { 
+    max-width: 1200px; 
+    margin: 40px auto; 
+    padding: 0 20px; 
+    font-family: Arial, sans-serif; 
+    display: flex; 
+    gap: 30px; 
+    align-items: flex-start; 
+}
+
+.cart-left { flex: 2; }
+.cart-right { flex: 1; }
+
+.cart-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: baseline; 
+    margin-bottom: 20px; 
+    border-bottom: 2px solid #eee; 
+    padding-bottom: 10px; 
+}
+.cart-header h2 { font-size: 24px; color: #333; }
+.cart-header span { color: #555; }
+
+/* Khung chứa các sản phẩm */
+.cart-items-container { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+    margin-bottom: 20px; 
+}
+.cart-item { 
+    display: flex; 
+    gap: 20px; 
+    border-bottom: 1px solid #eee; 
+    padding: 20px 0; 
+    position: relative; 
+}
+.cart-item:last-child { border-bottom: none; }
+
+.item-img { 
+    width: 100px; 
+    height: 100px; 
+    border: 1px solid #eee; 
+    border-radius: 4px; 
+    object-fit: cover; 
+}
+
+/* Nút xóa sản phẩm hình tròn nhỏ */
+.btn-remove { 
+    position: absolute; 
+    top: 15px; 
+    left: -10px; 
+    background: #999; 
+    color: white; 
+    border: none; 
+    border-radius: 50px; 
+    width: 20px; 
+    height: 20px; 
+    font-size: 10px; 
+    cursor: pointer; 
+    z-index: 10;
+}
+.btn-remove:hover { background: red; }
+
+.item-details { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+.item-name { font-size: 16px; font-weight: bold; color: #333; text-transform: uppercase; }
+.item-size { 
+    font-size: 13px; 
+    color: #666; 
+    background: #f1f1f1; 
+    padding: 3px 8px; 
+    border-radius: 3px; 
+    display: inline-block; 
+    margin-top: 5px; 
+    width: fit-content; 
+}
+
+.item-price-qty { display: flex; justify-content: space-between; align-items: flex-end; }
+.item-price { font-size: 16px; font-weight: bold; color: #333; }
+
+/* Bộ tăng giảm số lượng */
+.qty-controls { display: flex; border: 1px solid #ddd; border-radius: 4px; overflow: hidden; }
+.qty-controls button { background: white; border: none; width: 30px; height: 30px; cursor: pointer; font-size: 16px; }
+.qty-controls button:hover { background: #f1f1f1; }
+.qty-controls input { 
+    width: 40px; 
+    text-align: center; 
+    border: none; 
+    border-left: 1px solid #ddd; 
+    border-right: 1px solid #ddd; 
+    outline: none; 
+    font-weight: bold;
+}
+
+/* Khung Ghi chú */
+.cart-note { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+}
+.cart-note h4 { margin-bottom: 15px; font-size: 15px; }
+.cart-note textarea { 
+    width: 100%; 
+    height: 100px; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    resize: none; 
+    margin-bottom: 15px; 
+    outline: none;
+}
+
+/* Cột tóm tắt đơn hàng bên phải */
+.summary-box { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+    margin-bottom: 20px; 
+}
+.summary-box h3 { font-size: 18px; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px; }
+.total-line { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.total-line span { font-weight: bold; font-size: 16px; }
+.total-price { color: red; font-size: 24px !important; font-weight: bold; }
+.summary-note { font-size: 12px; color: #666; margin-bottom: 20px; }
+
+/* Nút thanh toán đỏ */
+.btn-checkout { 
+    width: 100%; 
+    background: red; 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+.btn-checkout:hover { background: #cc0000; }
+
+/* Khung thông báo chính sách xanh dương */
+.policy-box { 
+    background: #e9f5f9; 
+    padding: 15px; 
+    border-radius: 8px; 
+    font-size: 13px; 
+    color: #333; 
+    line-height: 1.5; 
+    border: 1px solid #d0e7f0; 
+}
+
+/* Responsive trên điện thoại màn hình nhỏ */
+@media (max-width: 900px) { 
+    .cart-wrapper { flex-direction: column; } 
+    .cart-left, .cart-right { width: 100%; } 
+}
